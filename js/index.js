@@ -55,26 +55,23 @@ navLinks.forEach((link, idx) => {
 });
 
 //logo IMG
-const logoIMG = document.querySelector('#logo-img');
-logoIMG.src = siteContent.nav["img-src"];
 
+// const logoIMG = document.querySelector('#logo-img');
+// logoIMG.src = siteContent.nav["img-src"];ß
+document.querySelector('#logo-img').src = siteContent.nav["img-src"];
 
 //Section CTA -/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/
+
 const newH1 = document.createElement('h1');
 const newerH1 = document.createElement('h1');
 const heading1 = document.querySelector('.cta-text h1');
-
-const headingString = siteContent.cta.h1;
-const headingArray = headingString.split(' ');
-
+const headingArray = siteContent.cta.h1.split(' ');
+//Creat new H1 elements to mimic line breaks in original.html
 newerH1.textContent = headingArray[0];
 newH1.textContent = headingArray[1];
 heading1.textContent = headingArray[2];
-
 //Split Heading into an array and prepend newly created H1s to get line breaks - did not want to mess with inline styling to mess with whitespace. 
 heading1.parentElement.prepend(newerH1,newH1);
-
-
 
 
 const ctaButton = document.querySelector('.cta-text button');
@@ -92,6 +89,7 @@ const featureP = document.querySelector('.text-content p');
 featureH4.textContent = siteContent["main-content"]["features-h4"];
 featureP.textContent = siteContent["main-content"]["features-content"];
 
+//Practice some child selectors I haven't used before 
 const productH4 = document.querySelector('.text-content:nth-child(2) h4');
 const productP = document.querySelector('.text-content:nth-child(2) p');
 productH4.textContent = siteContent["main-content"]["product-h4"];
