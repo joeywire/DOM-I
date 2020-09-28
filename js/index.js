@@ -40,3 +40,83 @@ const siteContent = {
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
+
+
+const title = document.querySelector('title'); 
+title.textContent = 'Great Idea!';
+
+//Header -/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/
+
+//Nav Links
+const navLinks = document.querySelectorAll('nav a');
+
+navLinks.forEach((link, idx) => {
+  link.textContent = siteContent.nav[`nav-item-${idx+1}`];
+});
+
+//logo IMG
+const logoIMG = document.querySelector('#logo-img');
+logoIMG.src = siteContent.nav["img-src"];
+
+
+//Section CTA -/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/
+
+const heading1 = document.querySelector('.cta-text h1');
+const headingString = siteContent.cta.h1;
+console.log(headingString);
+
+const ctaButton = document.querySelector('.cta-text button');
+ctaButton.textContent = siteContent.cta.button;
+
+const ctaImage = document.querySelector('#cta-img');
+ctaImage.src = siteContent.cta["img-src"];
+
+//Main Content -/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/
+
+//Top-Content
+
+const featureH4 = document.querySelector('.text-content h4');
+const featureP = document.querySelector('.text-content p');
+featureH4.textContent = siteContent["main-content"]["features-h4"];
+featureP.textContent = siteContent["main-content"]["features-content"];
+
+const productH4 = document.querySelector('.text-content:nth-child(2) h4');
+const productP = document.querySelector('.text-content:nth-child(2) p');
+productH4.textContent = siteContent["main-content"]["product-h4"];
+productP.textContent = siteContent["main-content"]["product-content"];
+
+//Middle img
+
+const midIMG = document.querySelector('#middle-img');
+midIMG.src = siteContent["main-content"]["middle-img-src"];
+
+//Bottom Content 
+// order = services -- product -- vision
+const bottomDivH4s = document.querySelectorAll('.bottom-content .text-content h4');
+
+bottomDivH4s[0].textContent = siteContent["main-content"]["services-h4"];
+bottomDivH4s[1].textContent = siteContent["main-content"]["product-h4"];
+bottomDivH4s[2].textContent = siteContent["main-content"]["vision-h4"];
+
+const bottomDivPs = document.querySelectorAll('.bottom-content .text-content p');
+
+bottomDivPs[0].textContent = siteContent["main-content"]["services-content"];
+bottomDivPs[1].textContent = siteContent["main-content"]["product-content"];
+bottomDivPs[2].textContent = siteContent["main-content"]["vision-content"];
+
+// Contact Content -/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/
+
+const contactH4 = document.querySelector('.contact h4');
+contactH4.textContent = siteContent.contact["contact-h4"];
+
+const contactPs = document.querySelectorAll('.contact p');
+//order = address -- phone # -- email
+contactPs[0].textContent = siteContent.contact.address;
+contactPs[1].textContent = siteContent.contact.phone;
+contactPs[2].textContent = siteContent.contact.email;
+
+//Footer -/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-
+
+const footerContent = document.querySelector('footer p');
+footerContent.textContent = siteContent.footer.copyright;
+
