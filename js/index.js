@@ -60,9 +60,22 @@ logoIMG.src = siteContent.nav["img-src"];
 
 
 //Section CTA -/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/
-
+const newH1 = document.createElement('h1');
+const newerH1 = document.createElement('h1');
 const heading1 = document.querySelector('.cta-text h1');
-heading1.textContent = siteContent.cta.h1;
+
+const headingString = siteContent.cta.h1;
+const headingArray = headingString.split(' ');
+
+newerH1.textContent = headingArray[0];
+newH1.textContent = headingArray[1];
+heading1.textContent = headingArray[2];
+
+//Split Heading into an array and prepend newly created H1s to get line breaks - did not want to mess with inline styling to mess with whitespace. 
+heading1.parentElement.prepend(newerH1,newH1);
+
+
+
 
 const ctaButton = document.querySelector('.cta-text button');
 ctaButton.textContent = siteContent.cta.button;
