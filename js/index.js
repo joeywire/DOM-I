@@ -62,8 +62,7 @@ logoIMG.src = siteContent.nav["img-src"];
 //Section CTA -/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/
 
 const heading1 = document.querySelector('.cta-text h1');
-const headingString = siteContent.cta.h1;
-console.log(headingString);
+heading1.textContent = siteContent.cta.h1;
 
 const ctaButton = document.querySelector('.cta-text button');
 ctaButton.textContent = siteContent.cta.button;
